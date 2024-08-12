@@ -1,24 +1,21 @@
-import { Checkbox, CheckState } from 'components/checkbox';
-import { useState } from 'react';
-
+import { PageItem, PageSelector } from 'components/pageSelector';
+const generatePages = (count: number): PageItem[] => {
+  return Array.from({ length: count }, (_, i) => ({
+    name: `Page ${i + 1}`,
+    defaultChecked: Math.random() > 0.5
+  }));
+};
 function Home() {
-  const [checked, setChecked] = useState<CheckState>('indeterminate');
+  const pages = generatePages(4);
   return (
-    <div className="relative items-center justify-center overflow-hidden bg-gray-300 p-20 text-5xl">
-      <Checkbox
-        checked={checked}
-        onCheck={(e) => {
-          setChecked(e);
-        }}
-        size="lg"
-      />
-      <Checkbox
-        checked={checked}
-        onCheck={(e) => {
-          setChecked(e);
-        }}
-        size="lg"
-      />
+    <div
+      className="flex size-full items-center justify-center font-Montserrat text-[14px] font-normal"
+      style={{
+        lineHeight: '18.2px',
+        color: 'rgb(31, 33, 40)'
+      }}
+    >
+      <PageSelector pages={pages} className="size-fit" />
     </div>
   );
 }
