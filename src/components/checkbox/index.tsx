@@ -96,7 +96,7 @@ export const UncheckedDefaultIcon = () => {
 
       <path
         d="M7 15.6L13.0345 20.9672C13.055 20.9854 13.0863 20.9837 13.1047 20.9635L24 9"
-        className="group-focus-within:!stroke-[#878787] group-hover:stroke-[#E3E3E3] group-focus:!stroke-[#878787] "
+        className="group-hover:stroke-[#E3E3E3] group-active:!stroke-[#878787] "
         strokeLinecap="round"
       />
     </svg>
