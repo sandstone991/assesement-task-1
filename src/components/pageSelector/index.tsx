@@ -52,7 +52,7 @@ export const PageSelector = ({
         checked={rootCheckState}
         setChecked={() => {
           if (rootCheckState === 'indeterminate') {
-            setPagesCheckedState(pagesCheckedState.map(() => false));
+            setPagesCheckedState(pagesCheckedState.map(() => true));
           } else if (rootCheckState) {
             setPagesCheckedState(pagesCheckedState.map(() => false));
           } else if (!rootCheckState) {
