@@ -6,7 +6,7 @@ const generatePages = (count: number): PageItem[] => {
   }));
 };
 function Home() {
-  const pages = generatePages(4);
+  const pages = generatePages(6);
   return (
     <div
       className="flex size-full items-center justify-center font-Montserrat text-[14px] font-normal"

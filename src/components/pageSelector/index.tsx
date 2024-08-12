@@ -38,7 +38,7 @@ export const PageSelector = ({
   return (
     <div
       className={cn(
-        'py-[9.5px] box-border border-[#EEEEEE] border flex items-center flex-col rounded-[6px]',
+        'py-[9px] box-border border-[#EEEEEE] border flex items-center flex-col rounded-[6px]',
         className
       )}
       style={{
@@ -63,7 +63,13 @@ export const PageSelector = ({
       <div className="h-fit w-full px-[15px]">
         <Seperator className="my-[9.5px]" />
       </div>
-      <div>
+      <div
+        className="h-[164px] overflow-y-auto"
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none'
+        }}
+      >
         {pages.map((page, index) => (
           <Page
             // this is okay since we don't change the order of the pages
@@ -84,7 +90,7 @@ export const PageSelector = ({
         <Seperator className="my-[9.5px]" />
       </div>
       <div className="w-full px-[15px] py-[10px]">
-        <Button className="w-full">Done</Button>
+        <Button className="h-[40px] w-full">Done</Button>
       </div>
     </div>
   );
