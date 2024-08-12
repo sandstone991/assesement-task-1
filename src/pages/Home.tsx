@@ -12,6 +12,13 @@ function Home() {
         }}
         size="lg"
       />
+      <Checkbox
+        checked={checked}
+        onCheck={(e) => {
+          setChecked(e);
+        }}
+        size="lg"
+      />
     </div>
   );
 }

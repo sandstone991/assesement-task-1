@@ -24,7 +24,7 @@ const useSetIndeterminate = (
   }, [indeterminate, ref]);
 };
 
-export const CheckedDefaultIcon = ({ disabled }: { disabled: boolean }) => {
+export const CheckedDefaultIcon = () => {
   return (
     <svg
       width="1em"
@@ -43,7 +43,7 @@ export const CheckedDefaultIcon = ({ disabled }: { disabled: boolean }) => {
         fill="#2469F6"
         stroke="#2469F6"
         strokeWidth="3"
-        className="hidden group-hover:inline"
+        className="hidden group-focus-within:inline"
       />
       <rect
         x="3"
@@ -51,7 +51,7 @@ export const CheckedDefaultIcon = ({ disabled }: { disabled: boolean }) => {
         width="25"
         height="25"
         rx="6"
-        fill={disabled ? '#5087F8' : '#2469F6'}
+        className="fill-[#2469F6] group-hover:fill-[#5087F8]"
       />
       <path
         d="M7 15.6L13.0345 20.9672C13.055 20.9854 13.0863 20.9837 13.1047 20.9635L24 9"
@@ -62,52 +62,7 @@ export const CheckedDefaultIcon = ({ disabled }: { disabled: boolean }) => {
   );
 };
 
-export const UncheckedDefaultIcon = ({ disabled }: { disabled: boolean }) => {
-  return disabled ? (
-    <svg
-      width="1em"
-      height="1em"
-      viewBox="0 0 31 31"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g clipPath="url(#clip0_1_197)">
-        <rect width="25" height="25" rx="6" x="3" y="3" fill="white" />
-        <rect
-          opacity="0.6"
-          x="3.5"
-          y="3.5"
-          width="24"
-          height="24"
-          rx="5.5"
-          stroke="#CDCDCD"
-        />
-      </g>
-      <defs>
-        <clipPath id="clip0_1_197">
-          <rect width="25" height="25" rx="6" fill="white" />
-        </clipPath>
-      </defs>
-    </svg>
-  ) : (
-    <svg
-      width="1em"
-      height="1em"
-      viewBox="0 0 31 31"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect width="25" height="25" rx="6" x="3" y="3" fill="white" />
-      <rect x="3.5" y="3.5" width="24" height="24" rx="5.5" stroke="#CDCDCD" />
-    </svg>
-  );
-};
-
-export const IndeterminateDefaultIcon = ({
-  disabled
-}: {
-  disabled: boolean;
-}) => {
+export const UncheckedDefaultIcon = () => {
   return (
     <svg
       width="1em"
@@ -126,7 +81,7 @@ export const IndeterminateDefaultIcon = ({
         rx="7.5"
         stroke="#2469F6"
         strokeWidth="3"
-        className="hidden group-hover:inline"
+        className="hidden group-focus-within:inline"
       />
       <rect
         x="3.5"
@@ -135,16 +90,17 @@ export const IndeterminateDefaultIcon = ({
         height="24"
         rx="5.5"
         fill="white"
-        stroke={disabled ? '#E3E3E3' : '#BDBDBD'}
+        stroke="#BDBDBD"
       />
       <path
         d="M7 15.6L13.0345 20.9672C13.055 20.9854 13.0863 20.9837 13.1047 20.9635L24 9"
-        stroke={disabled ? '#E3E3E3' : '#BDBDBD'}
+        className="group-focus-within:!stroke-[#878787] group-hover:stroke-[#E3E3E3] "
         strokeLinecap="round"
       />
     </svg>
   );
 };
+
 /**
  * @Note you can also adjust the size by passing font-size
  */
@@ -172,12 +128,12 @@ export const Checkbox = (props: CheckboxProps) => {
         : 'text-[2rem]';
   const CheckIcon = () => {
     if (checked === 'indeterminate') {
-      return <IndeterminateDefaultIcon disabled={!!props.disabled} />;
+      return <UncheckedDefaultIcon />;
     }
     if (checked) {
-      return <CheckedDefaultIcon disabled={!!props.disabled} />;
+      return <CheckedDefaultIcon />;
     }
-    return <UncheckedDefaultIcon disabled={!!props.disabled} />;
+    return <UncheckedDefaultIcon />;
   };
   return (
     <span
