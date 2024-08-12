@@ -27,6 +27,7 @@ const useSetIndeterminate = (
 export const CheckedDefaultIcon = () => {
   return (
     <svg
+      aria-hidden="true"
       width="1em"
       height="1em"
       viewBox="0 0 31 31"
@@ -70,6 +71,7 @@ export const UncheckedDefaultIcon = () => {
       viewBox="0 0 31 31"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
     >
       <rect x="3" y="3" width="25" height="25" rx="6" fill="white" />
       <rect
@@ -143,7 +145,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       <span
         tabIndex={props.disabled ? -1 : undefined}
         className={cn(
-          'group px-[6px] py-[6px] relative inline-flex cursor-pointer select-none appearance-none items-center align-middle justify-center bg-transparent text-[#5087F8]',
+          'group px-[2px] py-[2px] relative inline-flex h-fit cursor-pointer select-none appearance-none items-center align-middle justify-center bg-transparent text-[#5087F8]',
           { 'pointer-events-none cursor-default': props.disabled },
           _fontSize,
           props.className

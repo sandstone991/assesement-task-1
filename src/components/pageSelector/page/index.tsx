@@ -24,7 +24,7 @@ export const Page = ({ pageName, checked, setChecked }: PageProps) => {
         // if focused redirect focus to checkbox
         checkboxRef.current?.focus();
       }}
-      className="group flex h-[42px] w-[370px] cursor-pointer justify-between border-0 bg-[#FFFFFF] py-[8px] pl-[22px] pr-[15px]"
+      className="group flex h-[42px] w-[370px] cursor-pointer items-center justify-between border-0 bg-[#FFFFFF] py-[8px] pl-[22px] pr-[15px]"
     >
       <span className="text-[##1F2128]">{pageName}</span>
       <Checkbox
