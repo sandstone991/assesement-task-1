@@ -38,7 +38,7 @@ export const PageSelector = ({
   return (
     <div
       className={cn(
-        'py-[9px] box-border border-[#EEEEEE] border flex items-center flex-col rounded-[6px]',
+        'py-[9.5px] box-border border-[#EEEEEE] border flex items-center flex-col rounded-[6px]',
         className
       )}
       style={{
