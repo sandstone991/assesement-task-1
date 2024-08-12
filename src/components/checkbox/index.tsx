@@ -51,7 +51,7 @@ export const CheckedDefaultIcon = () => {
         width="25"
         height="25"
         rx="6"
-        className="fill-[#2469F6] group-hover:fill-[#5087F8]"
+        className="fill-[#2469F6] group-hover:fill-[#5087F8] group-active:!fill-[#2469F6] "
       />
       <path
         d="M7 15.6L13.0345 20.9672C13.055 20.9854 13.0863 20.9837 13.1047 20.9635L24 9"
